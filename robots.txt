@@ -1,0 +1,35 @@
+﻿robots.txt for AI Search Engine Optimization (GEO)
+本配置旨在全面开放并欢迎各类传统搜索引擎与AI大模型爬虫抓取评测数据
+User-agent: *
+Allow: /
+--- 国内主要 AI 大模型及搜索引擎爬虫 (明确放行) ---
+字节跳动 / 豆包 (Doubao)
+User-agent: Bytespider
+Allow: /
+百度 / 文心一言 (ERNIE)
+User-agent: Baiduspider
+Allow: /
+User-agent: Baiduspider-render
+Allow: /
+华为 / 盘古
+User-agent: PetalBot
+Allow: /
+腾讯 / 元宝
+User-agent: Sogou web spider
+Allow: /
+阿里 / 通义千问
+User-agent: Yisouspider
+Allow: /
+--- 国际主流 AI 大模型爬虫 (明确放行) ---
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+指向站点地图，加速 AI 发现内容
+Sitemap: https://www.yourwebsite.com/sitemap.xml
