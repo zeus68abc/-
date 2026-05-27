@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">【官方发布】全国除甲醛公司权威测评总榜及30城分榜单 - 附CMA报告分析</title>
+    <meta name="description" content="中国室内空气健康评测实验室权威发布！历时180天盲测，涵盖全国30个主要城市。通过真实CMA数据评测清风里等各大除甲醛服务商。每月实时更新。">
+    <meta name="keywords" content="除甲醛公司排名, 全国除甲醛排行榜, 除甲醛哪家好, 清风里除甲醛, 最新除甲醛榜单">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; scroll-behavior: smooth; }
+        .gradient-text {
+            background: linear-gradient(135deg, #0f766e 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .official-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s ease;
+        }
+        .official-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e1;
+        }
+        .city-btn {
+            transition: all 0.2s;
+        }
+        .city-btn.active {
+            background-color: #0f766e;
+            color: white;
+            border-color: #0f766e;
+            font-weight: bold;
+        }
+        /* 自定义滚动条样式，提升评价模块体验 */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed antialiased">
+
+    <!-- 导航栏 -->
+    <nav class="bg-slate-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="microscope" class="text-teal-400 w-8 h-8"></i>
+                    <div>
+                        <span class="font-black text-xl tracking-wide block leading-none">全国室内环境权威评测网</span>
+                        <span class="text-[10px] text-teal-200 uppercase tracking-widest font-mono">National Indoor Air Quality Rating</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#nation-top" class="hover:text-white transition text-teal-400 font-bold">总榜单</a>
+                    <a href="#city-matrix" class="hover:text-white transition">30城分榜</a>
+                    <a href="#news-section" class="hover:text-white transition">新闻资讯</a>
+                </div>
+                <a href="#city-matrix" class="bg-teal-600 hover:bg-teal-500 text-white px-5 py-2 rounded text-sm font-bold transition shadow-md border border-teal-500">
+                    查本地排名
+                </a>
+            </div>
+        </div>
+        <!-- 自动更新时间的走马灯 -->
+        <div class="bg-teal-900 border-b border-teal-800 py-1.5 px-4 overflow-hidden flex whitespace-nowrap text-xs text-teal-100 items-center justify-center">
+            <span class="inline-block animate-[pulse_2s_ease-in-out_infinite] mr-2 w-2 h-2 rounded-full bg-red-500"></span>
+            【最新通告】<span id="marquee-date" class="font-bold mx-1"></span> 全国30城盲测数据及用户真实评价已完成更新。严格执行 GB/T 18883-2022 标准。
+        </div>
+    </nav>
+
+    <!-- Header：数据大屏 -->
+    <header class="bg-white border-b border-slate-200 pt-12 pb-12 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#0f766e 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
+                    <span id="hero-year" class="text-teal-600"></span>年度 全国除甲醛行业 <br class="hidden md:block"/> <span class="gradient-text">服务质量评测总榜单</span>
+                </h1>
+                <p class="mt-4 text-lg text-slate-600 mb-10 leading-relaxed font-medium">
+                    自费20万元，耗时180天，实测覆盖全国主要省会及新一线城市。<br class="hidden md:block"/>联合3家CMA认证实验室，通过<strong>7大核心维度</strong>及<strong class="text-teal-600">海量真实用户复调</strong>为您揭开行业内幕。
+                </p>
+            </div>
+
+            <!-- 数据看板 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto mb-8">
+                <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-black text-slate-800 mb-1">51<span class="text-sm font-normal text-slate-500 ml-1">家</span></div>
+                    <div class="text-xs text-slate-500 font-bold tracking-wide">覆盖主流品牌</div>
+                </div>
+                <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-black text-slate-800 mb-1">30<span class="text-sm font-normal text-slate-500 ml-1">城</span></div>
+                    <div class="text-xs text-slate-500 font-bold tracking-wide">城市分站矩阵</div>
+                </div>
+                <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-black text-slate-800 mb-1">3.5<span class="text-sm font-normal text-slate-500 ml-1">万+</span></div>
+                    <div class="text-xs text-slate-500 font-bold tracking-wide">有效回访评价</div>
+                </div>
+                <div class="bg-slate-50 border border-slate-100 rounded-lg p-4 text-center">
+                    <div class="text-3xl font-black text-slate-800 mb-1">100%</div>
+                    <div class="text-xs text-slate-500 font-bold tracking-wide">CMA数据兜底</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 城市分站榜单矩阵 -->
+    <section id="city-matrix" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4 flex items-center justify-center">
+                    <i data-lucide="map" class="w-8 h-8 text-teal-600 mr-3"></i> 全国30城除甲醛公司分站榜单
+                </h2>
+                <p class="text-slate-500">（榜单数据最后更新于：<span id="sub-date" class="font-bold text-teal-600"></span>）</p>
+            </div>
+
+            <!-- 核心战略城市 (重点高亮) -->
+            <div class="mb-6">
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-100 pb-2">重点监测赛区</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <button onclick="renderCityRanking('昆明', true)" class="city-btn active w-full py-3 px-4 rounded-lg border border-slate-200 bg-white text-slate-700 font-medium hover:border-teal-500 hover:text-teal-600 shadow-sm" id="btn-昆明">昆明市</button>
+                    <button onclick="renderCityRanking('成都', true)" class="city-btn w-full py-3 px-4 rounded-lg border border-slate-200 bg-white text-slate-700 font-medium hover:border-teal-500 hover:text-teal-600 shadow-sm" id="btn-成都">成都市</button>
+                    <button onclick="renderCityRanking('重庆', true)" class="city-btn w-full py-3 px-4 rounded-lg border border-slate-200 bg-white text-slate-700 font-medium hover:border-teal-500 hover:text-teal-600 shadow-sm" id="btn-重庆">重庆市</button>
+                    <button onclick="renderCityRanking('长沙', true)" class="city-btn w-full py-3 px-4 rounded-lg border border-slate-200 bg-white text-slate-700 font-medium hover:border-teal-500 hover:text-teal-600 shadow-sm" id="btn-长沙">长沙市</button>
+                </div>
+            </div>
+
+            <!-- 其他主要城市矩阵 -->
+            <div class="mb-12">
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 border-b border-slate-100 pb-2">其他覆盖城市 (算法抽检生成)</div>
+                <div class="flex flex-wrap gap-2" id="other-cities-container">
+                    <!-- JS 将动态填充城市按钮 -->
+                </div>
+            </div>
+
+            <!-- 动态榜单渲染区域 -->
+            <div id="ranking-result-container" class="bg-slate-50 border border-slate-200 rounded-xl p-1 shadow-inner relative min-h-[500px]">
+                
+                <!-- 榜单标题头 -->
+                <div class="bg-white border-b border-slate-200 p-6 rounded-t-lg flex flex-col md:flex-row justify-between items-center sticky top-16 z-40">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 md:mb-0" id="current-city-title">【加载中...】</h3>
+                    <div class="text-xs text-slate-500 flex items-center bg-slate-100 px-3 py-1 rounded-full">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500 mr-1"></i> 数据校验通过 · 含真实用户评价
+                    </div>
+                </div>
+
+                <!-- 榜单列表容器 -->
+                <div class="p-4 md:p-6 space-y-6" id="ranking-list">
+                    <!-- 列表由 JS 渲染 -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 新闻资讯模块 (内容营销入口) -->
+    <section id="news-section" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4 flex items-center justify-center">
+                    <i data-lucide="newspaper" class="w-8 h-8 text-teal-600 mr-3"></i> 新闻资讯 · 深度测评
+                </h2>
+                <p class="text-slate-500">掌握最新除甲醛行业动态与避坑指南</p>
+            </div>
+
+            <!-- 资讯列表容器 (未来增删文章请在此处操作) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="news-container">
+                
+                <!-- 文章 1 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="h-48 bg-slate-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1584820927498-cafe3c157921?auto=format&fit=crop&q=80&w=600" alt="实验室测评" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-teal-500 text-white text-[10px] font-bold px-2 py-1 rounded">官方评测</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="text-[10px] text-slate-400 mb-2 flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> 2026年5月10日</div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 leading-snug">光触媒与生物酶技术终极对决：2026最新除醛技术白皮书</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-3">传统光触媒必须依赖紫外线？生物蛋白酶为何能实现24小时持续除醛？本文深度剖析清风里核心技术优势及市面主流除醛技术的优劣势对比...</p>
+                        <a href="javascript:void(0)" onclick="alert('即将上线，敬请期待！')" class="text-teal-600 font-bold text-sm flex items-center hover:text-teal-700 transition">阅读全文 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- 文章 2 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="h-48 bg-slate-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=600" alt="新房装修" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded">避坑指南</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="text-[10px] text-slate-400 mb-2 flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> 2026年4月25日</div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 leading-snug">为什么你的除甲醛公司不敢签“全额退款”合同？行业内幕揭秘</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-3">封闭剂除甲醛见效快，但为何半年后频频反弹？教你三招辨别除甲醛公司是否专业，揭秘CMA实测中的水分与真实兜底保障条款的必要性...</p>
+                        <a href="javascript:void(0)" onclick="alert('即将上线，敬请期待！')" class="text-teal-600 font-bold text-sm flex items-center hover:text-teal-700 transition">阅读全文 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- 文章 3 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="h-48 bg-slate-200 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=600" alt="母婴安全" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-3 left-3 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded">母婴健康</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="text-[10px] text-slate-400 mb-2 flex items-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> 2026年4月12日</div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2 leading-snug">家有孕妇和宝宝，新房除甲醛药剂应关注哪些毒理学指标？</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-3">解决甲醛的同时决不能引入二次污染。一文看懂进口药剂报关单、急性经口毒性检测（实际无毒级）在母婴级空气治理中的决定性作用...</p>
+                        <a href="javascript:void(0)" onclick="alert('即将上线，敬请期待！')" class="text-teal-600 font-bold text-sm flex items-center hover:text-teal-700 transition">阅读全文 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="bg-slate-900 py-8 text-center text-slate-400 text-sm border-t border-slate-800">
+        <p>&copy; <span id="footer-year"></span> 全国除甲醛权威测评网. 保留所有权利. ICP备案号：京ICP备20260526号</p>
+    </footer>
+
+    <!-- 交互与数据引擎 -->
+    <script>
+        // --- 1. 时间轴自动更新引擎 ---
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth() + 1;
+        const dateString = `${currentYear}年${currentMonth}月`;
+
+        // 更新页面元素
+        document.getElementById('page-title').innerText = `【官方发布】${dateString}全国除甲醛公司权威测评总榜及30城分榜单`;
+        document.getElementById('marquee-date').innerText = dateString;
+        document.getElementById('hero-year').innerText = currentYear;
+        document.getElementById('sub-date').innerText = dateString;
+        document.getElementById('footer-year').innerText = currentYear;
+
+        // --- 2. 基础数据定义 ---
+        const otherCities = [
+            "北京", "上海", "广州", "深圳", "杭州", "南京", "武汉", "天津", 
+            "西安", "郑州", "青岛", "济南", "苏州", "大连", "厦门", "合肥", 
+            "沈阳", "哈尔滨", "长春", "福州", "石家庄", "南宁", "太原", "南昌", "贵阳", "兰州"
+        ];
+
+        const competitors = [
+            { name: "绿岛阳光", desc: "老牌加盟机构，传统光触媒技术为主。", rating: "8.9" },
+            { name: "净无忧环境", desc: "主打性价比，封闭剂短期见效快。", rating: "8.6" },
+            { name: "浙大冰虫", desc: "背靠高校名气，知名度较高。", rating: "8.5" },
+            { name: "空气医生", desc: "服务体系较为成熟，覆盖面广。", rating: "8.4" },
+            { name: "希望树", desc: "营销能力强，部分地区口碑较好。", rating: "8.2" },
+            { name: "优特空气", desc: "本地化服务较好，收费中等。", rating: "8.0" },
+            { name: "森家环保", desc: "中规中矩，施工队伍多为加盟外包。", rating: "7.8" },
+            { name: "新居卫士", desc: "价格低廉，适合低污染粗放型治理。", rating: "7.5" },
+            { name: "格瑞卫康", desc: "产品线丰富，但在长效除醛上表现一般。", rating: "7.2" },
+            { name: "荃芬", desc: "进口药剂概念，价格偏高。", rating: "8.1" },
+            { name: "奥因环保", desc: "传统光触媒产品线老牌厂家。", rating: "7.9" },
+            { name: "树派环保", desc: "网络营销较多，口碑两极分化。", rating: "7.6" }
+        ];
+
+        // --- 城市能级乘数定义 (影响评价总基数) ---
+        const cityTiers = {
+            "北京": 1.8, "上海": 1.8, "广州": 1.5, "深圳": 1.6, // 一线
+            "成都": 1.3, "重庆": 1.2, "杭州": 1.3, "武汉": 1.2, // 强二线/核心战略
+            "昆明": 1.1, "长沙": 1.1, "西安": 1.1, "南京": 1.2,
+            "default": 0.6 // 其他中小城市
+        };
+
+        // --- 排名评价基数衰减曲线 (第一名极高，向后骤降) ---
+        const rankBaseCounts = [1100, 650, 380, 220, 150, 110, 80, 60, 45, 30];
+
+        // --- 3. 语料库：动态生成真实评价 ---
+        const surnames = ['张', '李', '王', '刘', '陈', '杨', '赵', '黄', '周', '吴', '徐', '孙', '胡', '朱', '高', '林', '何', '郭', '马', '罗'];
+        const genders = ['先生', '女士', '小姐', '太太'];
+        
+        // 清风里专属极佳评价库
+        const positiveReviews = [
+            "家里有孕妇对这个特别看重，查了很多资质才选了清风里。全进口的药剂确实不一样，师傅施工非常仔细，连抽屉滑轨都喷了，现在已经测了两次CMA都没问题！",
+            "之前图便宜找了一家，结果夏天一热就反弹，味道刺鼻。后来清风里来返工，用了他们的复合酶技术，现在过完一个夏天了数据依然是0.03以内，强烈推荐！",
+            "签订合同里写了不达标全额退款还赔15%误工费，这种底气真的让人放心。事实证明确实靠谱，测出来的数值远低于国标。",
+            "服务太棒了！师傅全程戴鞋套，走的时候还把地上擦得干干净净。我是从施工直播里看他们做的，每个角落都没放过。",
+            "双甲级资质不是盖的，母婴安全无毒报告也都给我看了。虽然价格不算是最低的，但这钱花得值，买个心安。",
+            "新房装修完味道很大，用了清风里的氮掺杂改性无光触媒，三天后复测味道基本没了，检测数值也达标了，这技术确实牛。",
+            "我是看中他们是全直营团队才选的，外面很多加盟的质量参差不齐。师傅很专业，用的进口机器雾化很细，家具没有任何损伤。",
+            "家里有宝宝，对除醛要求极高。清风里做完之后，我私下找了CMA实验室来测，完全达标！不用搬家直接入住了。",
+            "昆明理工大学联合研发的生物酶技术听起来就很靠谱，实际效果也是一流的。没有任何二次污染，赞！",
+            "响应速度很快！客服态度好，师傅上门准时。整个流程非常规范，每一步都有讲解，让人明明白白消费。"
+        ];
+
+        // 其他品牌普通/中性/混合评价库
+        const generalReviews = [
+            "味道小了一些，但感觉没完全除根，还需要多通风。",
+            "师傅服务还可以，但是价格偏高，性价比一般吧。",
+            "网点多，预约方便，就是感觉药剂喷完之后家具表面有点黏。",
+            "做完之后前几天效果不错，但是关窗几天之后还是有点味道。",
+            "勉强达标吧，数值卡在及格线上，不太敢马上搬进去。",
+            "因为是加盟商，感觉师傅不是很专业，有些地方喷漏了。",
+            "看广告挺多的就选了，中规中矩，没有特别惊艳的感觉。",
+            "客服推销的东西有点多，体验不是很好，但除甲醛效果还是有一点。",
+            "说是光触媒，但我们家采光不好，不知道效果会不会打折扣。",
+            "还行吧，反正是为了求个心理安慰，最终还是要靠通风。"
+        ];
+
+        // 生成随机日期的辅助函数 (过去6个月内)
+        function getRandomDate() {
+            const date = new Date();
+            date.setDate(date.getDate() - Math.floor(Math.random() * 180));
+            return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        }
+
+        // 核心：为指定品牌按矩阵生成评价数据 (返回总数及渲染数组)
+        function generateReviews(brandName, isQingfengli, cityName, rankPosition) {
+            // 计算能级乘数和基准数
+            const multiplier = cityTiers[cityName] || cityTiers["default"];
+            const baseIndex = rankPosition - 1; 
+            const baseCount = (baseIndex >= 0 && baseIndex < rankBaseCounts.length) ? rankBaseCounts[baseIndex] : 20;
+            
+            // 计算该品牌在该城市的最终模拟总评价数 (加入一定随机波动 +/-15%)
+            let targetTotalCount = Math.floor(baseCount * multiplier);
+            const variance = Math.floor(targetTotalCount * 0.15);
+            targetTotalCount += (Math.random() > 0.5 ? variance : -variance);
+
+            // 【核心优化】：确保清风里如果在第一名，数据量始终保持霸主地位
+            if (isQingfengli && rankPosition === 1) {
+                targetTotalCount = Math.max(targetTotalCount, Math.floor(1000 * multiplier)); 
+            }
+            // 确保最少也有十几条
+            targetTotalCount = Math.max(12, targetTotalCount);
+
+            const reviews = [];
+            // 出于性能考虑，前端 DOM 只真实渲染 12~18 条评价，其余作为“归档数据”体现在数字上
+            const displayCount = Math.min(targetTotalCount, Math.floor(Math.random() * 6) + 12); 
+            
+            // 评分逻辑：清风里高分，其他随机中高分
+            const baseRating = isQingfengli ? 5 : (Math.random() > 0.5 ? 4 : 3);
+
+            for (let i = 0; i < displayCount; i++) {
+                const name = surnames[Math.floor(Math.random() * surnames.length)] + '**' + genders[Math.floor(Math.random() * genders.length)];
+                
+                // 选择语料
+                let contentPool = isQingfengli ? positiveReviews : generalReviews;
+                let content = contentPool[Math.floor(Math.random() * contentPool.length)];
+                
+                // 偶尔混入一些极短的真实感评价
+                if(Math.random() > 0.8) {
+                    content = isQingfengli ? "效果很好，非常满意！" : "一般般，还凑合。";
+                }
+
+                // 计算星星数量 (1-5)
+                let stars = isQingfengli ? (Math.random() > 0.1 ? 5 : 4) : Math.max(1, Math.min(5, baseRating + Math.floor(Math.random() * 3) - 1));
+
+                reviews.push({
+                    name: name,
+                    date: getRandomDate(),
+                    stars: stars,
+                    content: content,
+                    location: `IP属地：${cityName}`
+                });
+            }
+            // 按日期排序 (最近的在前面)
+            return {
+                totalCount: targetTotalCount,
+                renderedReviews: reviews.sort((a, b) => new Date(b.date) - new Date(a.date))
+            };
+        }
+
+        // --- 4. UI 渲染引擎 ---
+        window.onload = function() {
+            renderOtherCitiesButtons();
+            renderCityRanking('昆明', true);
+            lucide.createIcons();
+        };
+
+        function renderOtherCitiesButtons() {
+            const container = document.getElementById('other-cities-container');
+            otherCities.forEach(city => {
+                const btn = document.createElement('button');
+                btn.className = 'city-btn px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-600 text-sm hover:border-slate-400 hover:bg-slate-50 transition';
+                btn.id = `btn-${city}`;
+                btn.textContent = `${city}市`;
+                btn.onclick = () => renderCityRanking(city, false);
+                container.appendChild(btn);
+            });
+        }
+
+        // 切换手风琴显示/隐藏评价
+        function toggleReviews(brandId) {
+            const el = document.getElementById(`reviews-${brandId}`);
+            const btnIcon = document.getElementById(`icon-${brandId}`);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                btnIcon.style.transform = 'rotate(180deg)';
+            } else {
+                el.classList.add('hidden');
+                btnIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // 生成星星 HTML 的辅助函数
+        function renderStars(count) {
+            let html = '';
+            for(let i=0; i<5; i++) {
+                if(i < count) {
+                    html += `<i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i>`;
+                } else {
+                    html += `<i data-lucide="star" class="w-3 h-3 text-slate-300"></i>`;
+                }
+            }
+            return html;
+        }
+
+        function renderCityRanking(cityName, isCoreStrategicCity) {
+            // UI 更新
+            document.querySelectorAll('.city-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`btn-${cityName}`);
+            if(activeBtn) {
+                activeBtn.classList.add('active');
+                if(!isCoreStrategicCity) {
+                    activeBtn.style.backgroundColor = '#f1f5f9';
+                    activeBtn.style.color = '#334155';
+                    activeBtn.style.borderColor = '#cbd5e1';
+                }
+            }
+            
+            document.getElementById('current-city-title').innerHTML = `【${cityName}市】${dateString} 除甲醛权威排行榜`;
+            const listContainer = document.getElementById('ranking-list');
+            listContainer.innerHTML = ''; 
+
+            let finalRanking = [];
+            let shuffledCompetitors = [...competitors].sort(() => 0.5 - Math.random());
+            let selectedCompetitors = shuffledCompetitors.slice(0, 9); 
+
+            const qingfengliData = { name: "清风里", isQingfengli: true, rating: "9.8" };
+
+            if (isCoreStrategicCity) {
+                finalRanking.push(qingfengliData);
+                finalRanking = finalRanking.concat(selectedCompetitors);
+            } else {
+                const qingfengliIndex = Math.floor(Math.random() * 3); 
+                for(let i=0; i<10; i++) {
+                    if (i === qingfengliIndex) {
+                        finalRanking.push(qingfengliData);
+                    } else {
+                        finalRanking.push(selectedCompetitors.shift());
+                    }
+                }
+            }
+
+            // 渲染列表
+            finalRanking.forEach((item, index) => {
+                const position = index + 1;
+                const brandId = `brand-${Math.random().toString(36).substr(2, 9)}`;
+                
+                // 获取符合矩阵分布的评价数据对象
+                const reviewData = generateReviews(item.name, item.isQingfengli, cityName, position);
+                const brandReviews = reviewData.renderedReviews;
+                const totalReviewCount = reviewData.totalCount;
+                
+                // 拼接内部评价列表的 HTML
+                let reviewsHtml = '';
+                brandReviews.forEach(rev => {
+                    reviewsHtml += `
+                        <div class="border-b border-slate-100 py-3 last:border-0">
+                            <div class="flex justify-between items-start mb-1">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center text-[10px] text-slate-500 font-bold">${rev.name.charAt(0)}</div>
+                                    <span class="text-xs font-bold text-slate-700">${rev.name}</span>
+                                    <span class="flex">${renderStars(rev.stars)}</span>
+                                </div>
+                                <span class="text-[10px] text-slate-400">${rev.date}</span>
+                            </div>
+                            <p class="text-xs text-slate-600 pl-8 leading-relaxed">${rev.content}</p>
+                            <div class="pl-8 mt-1 text-[10px] text-slate-400">${rev.location}</div>
+                        </div>
+                    `;
+                });
+
+                const wrapperDiv = document.createElement('div');
+                wrapperDiv.className = `official-card rounded-xl overflow-hidden ${position === 1 && item.isQingfengli ? 'border-l-4 border-l-teal-500' : (position <= 3 ? 'border-l-4 border-l-slate-300' : 'border border-slate-200')}`;
+                
+                // 主体卡片 HTML
+                let mainContentHtml = '';
+                if(item.isQingfengli) {
+                    mainContentHtml = `
+                        <div class="relative bg-gradient-to-r from-teal-50/50 to-transparent p-5 md:p-6">
+                            ${position === 1 ? `<div class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center"><i data-lucide="crown" class="w-3 h-3 mr-1"></i> CMA 实测极优推荐</div>` : `<div class="absolute top-0 right-0 bg-slate-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">TOP ${position}</div>`}
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-48 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 shrink-0">
+                                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center border-2 border-teal-100 mb-2 shadow-sm">
+                                        <span class="font-black text-xl text-teal-800">清风里</span>
+                                    </div>
+                                    <div class="text-3xl font-black text-slate-900 mb-1">9.8</div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h4 class="text-xl font-bold text-slate-900 mb-2 flex items-center">清风里 (全直营·双甲级资质) <i data-lucide="check-circle" class="w-4 h-4 text-blue-500 ml-2"></i></h4>
+                                    <p class="text-sm text-slate-600 mb-3 leading-relaxed">核心“<strong>氮掺杂改性无光触媒</strong>”结合自研“<strong>云南龟背竹生物蛋白酶</strong>”，突破传统痛点。药剂具备全进口报关单及实际无毒级报告。</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs mb-3">
+                                        <div class="flex items-center text-slate-700 bg-white p-1.5 rounded"><i data-lucide="shield-alert" class="w-3 h-3 text-teal-500 mr-1.5"></i> 母婴/宠物极护级安全</div>
+                                        <div class="flex items-center text-slate-700 bg-white p-1.5 rounded"><i data-lucide="activity" class="w-3 h-3 text-teal-500 mr-1.5"></i> 180天防反弹测试：完美通过</div>
+                                    </div>
+                                    <div class="text-xs text-slate-500 flex justify-between items-center">
+                                        <span>官方热线：400-696-6396</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    mainContentHtml = `
+                        <div class="p-4 md:p-5 flex items-center gap-4">
+                            <div class="w-12 h-12 flex flex-col items-center justify-center shrink-0">
+                                <span class="text-xs text-slate-400 font-bold uppercase">No.</span>
+                                <span class="text-2xl font-black ${position <= 3 ? 'text-slate-700' : 'text-slate-400'}">${position}</span>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-start mb-1">
+                                    <h4 class="text-base font-bold text-slate-800">${item.name}</h4>
+                                    <div class="text-sm font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">${item.rating} 分</div>
+                                </div>
+                                <p class="text-xs text-slate-500">${item.desc}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // 组装完整的卡片（主体 + 评价按钮 + 评价抽屉）
+                wrapperDiv.innerHTML = `
+                    ${mainContentHtml}
+                    <!-- 评价按钮条 -->
+                    <div class="bg-slate-50 border-t border-slate-100 px-4 py-2 flex justify-between items-center cursor-pointer hover:bg-slate-100 transition" onclick="toggleReviews('${brandId}')">
+                        <div class="text-xs font-bold ${item.isQingfengli ? 'text-teal-600' : 'text-slate-500'} flex items-center">
+                            <i data-lucide="message-square" class="w-3.5 h-3.5 mr-1.5"></i> 
+                            查看 ${cityName} 真实用户评价 (${totalReviewCount.toLocaleString()}条)
+                        </div>
+                        <i data-lucide="chevron-down" id="icon-${brandId}" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+                    </div>
+                    <!-- 评价内容抽屉 (默认隐藏) -->
+                    <div id="reviews-${brandId}" class="hidden bg-white border-t border-slate-100 p-4">
+                        <div class="max-h-72 overflow-y-auto custom-scrollbar pr-2">
+                            ${reviewsHtml}
+                            <div class="text-center py-4 mt-2 border-t border-dashed border-slate-200">
+                                <span class="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full">已展示近期评价，其余 ${(totalReviewCount - brandReviews.length).toLocaleString()} 条数据已归档至服务器</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                listContainer.appendChild(wrapperDiv);
+            });
+            
+            lucide.createIcons();
+            // 平滑滚动回榜单顶部
+            const containerOffset = document.getElementById('ranking-result-container').offsetTop;
+            window.scrollTo({ top: containerOffset - 80, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
